@@ -472,6 +472,24 @@
   setInterval(nextTestimonial, 5000);
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll('.navbar-nav a');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        const toggle = document.querySelector('.navbar-toggler');
+        const menu = document.querySelector('.navbar-collapse');
+
+        if (toggle && getComputedStyle(toggle).display !== 'none' && menu.classList.contains('show')) {
+          toggle.click(); // simula o clique no botão para fechar
+        }
+      });
+    });
+  });
+</script>
+
+
   
 </body>
 </html>
